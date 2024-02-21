@@ -30,33 +30,36 @@
     },
     "work": [
       {
-        "name": "midudev",
-        "position": "Divulgador sobre Programación Web",
+        "name": "Freelance",
+        "position": "Desarrollador Front End",
         "url": "https://twitch.tv/midudev",
-        "startDate": "2021-01-01",
-        "endDate": null,
-        "summary": "Streamer de programación más visto en Español en Twitch. +1 millón de seguidores entre todas mis redes sociales. Reconocido por Google, Microsoft y GitHub por mi impacto en la comunidad de desarrolladores.",
+        "startDate": "11/2023",
+        "endDate": "12/2023",
+        "remote": true,
+        "summary": "Mejora de diseño, optimización de código, sistema de estilos reutilizable, desarrollo de version móvil y migrado a Vue Composition API",
         "highlights": [
           "Started the company"
         ]
       },
       {
-        "name": "Adevinta",
-        "position": "Lead Frontend Architect",
+        "name": "Freelance Fiverr",
+        "position": "Desarrollador Front End",
         "url": "https://twitch.tv/midudev",
-        "startDate": "2016-06-01",
-        "endDate": "2022-09-01",
-        "summary": "Lideré una convergencia técnica entre diferentes productos y migramos una arquitectura monolítica a otra más flexible y optimizada. Fomenté buenas prácticas y mejoras en la cultura de rendimiento, además de la entrega rápida de valor a los usuarios.",
+        "remote": true,
+        "startDate": "05/2023",
+        "endDate": "06/2023",
+        "summary": "Desarollo de de versión móvil utilizando Svelte/SveltKit y Firebase",
         "highlights": [
           "Started the company"
         ]
       },
       {
-        "name": "Hubii",
-        "position": "Senior FrontEnd Developer",
-        "startDate": "2011-03-01",
-        "endDate": "2016-05-01",
-        "summary": "Desarrollé una plataforma de noticias geolocalizadas y una API para consumir la información. Escalé los servicios para soportar la carga de más de cientos de miles de peticiones al día. Recorté los tiempos de entrega y despliegues a producción a la mitad. Colaboré con Mozilla y Telefónica para desarrollar la primera app para televisores con FirefoxOS.",
+        "name": "Freelance Fiverr",
+        "position": "Desarrollador Front End",
+        "remote": true,
+        "startDate": "07/2023",
+        "endDate": "08/2023",
+        "summary" :"Desarrollo de página de empresa desde cero haciendo uso de un diseño proporcionado por el equipo de dicha empresa, implementación de StoryBlok Headless CMS para reutilización y escalabilidad del front, optimización del rendimiento e integrar el stack con Nuxt JS/Vue",
         "highlights": [
           "Started the company"
         ]
@@ -163,6 +166,13 @@
           "Desarrollo Web", "Frontend", "JavaScript Library", "UI"
         ]
       },
+      {
+        "name": "Astro",
+        "level": "Basico",
+        "keywords": [
+          "Framework"
+        ]
+      },
     
       {
         "name": "Firebase",
@@ -251,7 +261,7 @@
       {
         "name": "Chefy",
         "isActive": false,
-        "description": "Implementacion de diseño móvil para aplicación de generación de recetas",
+        "description": "Red Social para compartir recetas de comida generadas con Inteligencia Articial (ChatGPT)",
         "highlights": [
           "Trabajo",
           "Front-End Dev",
@@ -264,8 +274,9 @@
       {
         "name": "VueModal",
         "isActive": true,
-        "description": "Componente modal de Vue.js reutilizable",
+        "description": "Componente modal de Vue.js reutilizable con flexibilidad de personalización y accesibilidad",
         "highlights": [
+          "Proyecto Personal",
           "Vue",
           "Componente",
           "TypeScript"
@@ -282,7 +293,8 @@
           "Front-End Dev",
           "TypeScript",
           "Vue",
-          "openAI API"
+          "OpenAI API",
+          "Firebase"
         ],
         "url": "https://pruebastecnicas.com",
         "github": "https://github.com/midudev/pruebas-tecnicas"
@@ -290,7 +302,7 @@
       {
         "name": "DeduceDataSolutions",
         "isActive": true,
-        "description": "Implementación del diseño web proporcionado por el equipo de DeduceDataSolutions para recrear por completo su página de empresa",
+        "description": "Pagina de Empresa y Blog de noticias",
         "highlights": [
           "Trabajo",
           "Front-End Dev",
