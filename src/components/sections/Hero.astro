@@ -1,0 +1,160 @@
+---
+import Section from "@/components/Section.astro";
+import Mail from "@/icons/Mail.astro";
+import Phone from "@/icons/Phone.astro";
+import Worldmap from "@/icons/Worldmap.astro";
+import LinkedIn from "@/icons/Linkedin.astro";
+import GitHub from "@/icons/Github.astro";
+import { basics } from "@cv";
+
+const { name, alias, label, image, location, phone, email, profiles } = basics;
+const { city, region } = location;
+
+type SocialIcon = Record<string, string | any>;
+
+const SOCIAL_ICONS: SocialIcon = {
+  GitHub,
+  LinkedIn,
+};
+---
+
+<Section>
+  <div class="container">
+    <div class="info-stack">
+      <h1>{name}</h1>
+      <h2>{label}</h2>
+      <a
+        href="https://www.google.es/maps/place/Granada/"
+        title={`Ver ubicación en Google`}
+        target="_blank"
+        aria-role="location"
+        class="location"
+      >
+        <Worldmap />
+        {city}, {region}
+      </a>
+      <span aria-role="alias"> {alias}</span>
+      <footer class="no-print">
+        <a
+          href={`mailto:${email}`}
+          title={`Enviar un correo electrónico a ${name}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Mail />
+        </a>
+
+        <a href={`tel:${phone}`} title={`Llamar a ${name}`}>
+          <Phone />
+        </a>
+
+        {
+          profiles.map(({ network, username, url }) => {
+            const Icon = SOCIAL_ICONS[network];
+            return (
+              <a
+                href={url}
+                title={`Visitar el perfin de ${username} en ${network}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon />
+              </a>
+            );
+          })
+        }
+      </footer>
+    </div>
+    <figure>
+      <img src={image} alt="ID image" />
+    </figure>
+  </div>
+</Section>
+
+<style>
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .info-stack {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .info-stack > * {
+    margin-block: 0;
+  }
+
+  .info-stack > * + * {
+    margin-top: var(--inner-stack-spacing);
+  }
+
+  .info-stack > h2 {
+    color: hsl(var(--description-color));
+    font-weight: 300;
+    font-size: var(--size--1);
+  }
+
+  .info-stack > a.location,
+  span[aria-role="alias"] {
+    font-size: var(--size--2);
+    font-weight: 300;
+    color: hsl(var(--description-color));
+  }
+
+  .info-stack > a.location {
+    --space: 8px;
+    display: flex;
+    align-items: center;
+    gap: var(--space);
+  }
+
+  .info-stack > a.location:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  footer.no-print {
+    --space: 5px;
+    display: flex;
+    gap: var(--space);
+  }
+  footer.no-print > a {
+    border: 1.5px solid hsl(var(--faded-description-color));
+    padding: 0.4rem;
+    border-radius: calc(var(--border-radius) / 2);
+    color: hsl(var(--description-color));
+  }
+
+  figure {
+    --max-size: 7rem;
+    display: flex;
+    align-items: center;
+    max-width: var(--max-size);
+    max-height: var(--max-size);
+    border-radius: var(--border-radius);
+    border: 1px dashed hsl(var(--terciary-color));
+  }
+
+  img {
+    display: block;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+  }
+
+  @media (max-width: 760px) {
+    figure {
+      --max-size: 5rem;
+    }
+  }
+
+  @media (max-width: 350px) {
+    figure {
+      display: none;
+    }
+  }
+</style>

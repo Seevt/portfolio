@@ -1,0 +1,116 @@
+---
+import Section from "@/components/Section.astro";
+import { projects } from "@cv";
+
+// const { summary } = basics;
+---
+
+<Section title="Proyectos">
+  <ul role="list" class="grid">
+    {
+      projects.map(({ name, isActive, description, highlights, url }) => {
+        return (
+          <li>
+            <article>
+              <h3>
+                {isActive ? (
+                  <a
+                    class="url"
+                    href={url}
+                    title={`Visitar ${name}`}
+                    target="_blank"
+                  >
+                    {name}
+                  </a>
+                ) : (
+                  `${name}`
+                )}
+                {isActive && <span style="color: #22c55e">&bull;</span>}
+              </h3>
+              <p>{description}</p>
+              <ul class="tags" role="list">
+                {highlights.map((highlight) => {
+                  return (
+                    <li>
+                      <span>{highlight}</span>
+                    </li>
+                  );
+                })}
+              </ul>
+            </article>
+          </li>
+        );
+      })
+    }
+  </ul>
+</Section>
+
+<style>
+  .grid {
+    --space: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 30ch), 1fr));
+    gap: var(--space);
+    margin-top: var(--inner-stack-spacing);
+  }
+
+  .grid > li {
+    padding: 0.8rem;
+    border: 1.5px solid hsl(var(--terciary-color) / 0.8);
+    border-radius: calc(var(--border-radius) / 1.4);
+  }
+
+  article {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+  }
+
+  article > * {
+    margin-block: 0;
+  }
+
+  article > * + * {
+    margin-top: calc(var(--inner-stack-spacing) * 2);
+  }
+
+  article > :nth-child(3) {
+    box-sizing: content-box;
+    padding-top: calc(var(--inner-stack-spacing) * 4);
+    margin-block-start: auto;
+  }
+
+  article > h3 {
+    font-size: var(--size-0);
+    font-weight: 600;
+    letter-spacing: 0.009px;
+  }
+
+  article > p {
+    font-size: var(--size--2);
+  }
+
+  ul.tags {
+    --space: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space);
+  }
+
+  ul.tags > li {
+    padding-block: 5px;
+    padding-inline: 8px;
+    background: hsl(var(--terciary-color) / 0.8);
+    font-size: var(--size--3);
+    height: fit-content;
+    width: fit-content;
+    border-radius: calc(var(--border-radius) / 3);
+  }
+
+  ul.tags > li > span {
+    font-size: var(--size--3);
+    color: var(--secondary-color);
+    font-weight: 600;
+  }
+</style>
