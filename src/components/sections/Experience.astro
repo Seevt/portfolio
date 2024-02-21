@@ -1,1 +1,106 @@
-<h2>Experience</h2>
+---
+import Section from "@/components/Section.astro";
+import { work } from "@cv";
+---
+
+<Section title="Experiencia">
+  <ul class="experience-stack" role="list">
+    {
+      work.map(({ name, position, startDate, endDate, summary, remote }) => {
+        return (
+          <li>
+            <article>
+              <h3>
+                <div class="position">
+                  {name} -{" "}
+                  {remote ? (
+                    <div class="remote-job">
+                      <span>Remoto</span>
+                    </div>
+                  ) : null}
+                </div>
+
+                <span aria-role="date">
+                  {startDate} - {endDate}
+                </span>
+              </h3>
+              <h4>{position}</h4>
+              <p>{summary}</p>
+            </article>
+          </li>
+        );
+      })
+    }
+  </ul>
+</Section>
+
+<style>
+  .experience-stack {
+    --gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: var(--inner-stack-spacing);
+  }
+  .experience-stack > * {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .experience-stack > * + * {
+    margin-top: var(--gap);
+  }
+
+  /* article stack */
+  article {
+    --gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  article > * {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  article > * + * {
+    margin-top: var(--gap);
+  }
+
+  article > h3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  h3 > .position {
+    --space: 8px;
+    display: flex;
+    align-items: center;
+    gap: var(--space);
+    font-size: var(--size-0);
+    font-weight: 600;
+    letter-spacing: 0.009px;
+  }
+
+  .position > .remote-job {
+    background: hsl(var(--terciary-color) / 0.8);
+    border-radius: calc(var(--border-radius) / 3);
+    padding-block: 2px;
+    padding-inline: 6px;
+  }
+
+  .remote-job > span {
+    font-size: var(--size--2);
+  }
+
+  article > h4 {
+    font-size: var(--size--2);
+  }
+
+  h3 > span[aria-role="date"] {
+    font-size: var(--size--2);
+    font-weight: 400;
+    opacity: 0.8;
+  }
+</style>
