@@ -47,7 +47,7 @@ import { projects } from "@cv";
   .grid {
     --space: 1rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 30ch), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
     gap: var(--space);
     margin-top: var(--inner-stack-spacing);
   }
@@ -83,6 +83,10 @@ import { projects } from "@cv";
     font-size: var(--size-0);
     font-weight: 600;
     letter-spacing: 0.009px;
+    /* prevent word overflow */
+
+    overflow-wrap: break-word;
+    min-width: 0;
   }
 
   article > p {
