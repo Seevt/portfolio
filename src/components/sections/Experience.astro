@@ -10,20 +10,15 @@ import { work } from "@cv";
         return (
           <li>
             <article>
-              <h3>
-                <div class="position">
+              <div class="position">
+                <h3>
                   {name} -{" "}
-                  {remote ? (
-                    <div class="remote-job">
-                      <span>Remoto</span>
-                    </div>
-                  ) : null}
-                </div>
-
+                  {remote ? <span class="remote-job">Remoto</span> : null}
+                </h3>
                 <span aria-role="date">
                   {startDate} - {endDate}
                 </span>
-              </h3>
+              </div>
               <h4>{position}</h4>
               <p>{summary}</p>
             </article>
@@ -67,13 +62,13 @@ import { work } from "@cv";
     margin-top: var(--gap);
   }
 
-  article > h3 {
+  article > .position {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
-  h3 > .position {
+  .position > h3 {
     --space: 8px;
     display: flex;
     align-items: center;
@@ -83,24 +78,21 @@ import { work } from "@cv";
     letter-spacing: 0.009px;
   }
 
-  .position > .remote-job {
+  .position > span[aria-role="date"] {
+    font-size: var(--size--2);
+    font-weight: 400;
+    opacity: 0.8;
+  }
+
+  h3 > .remote-job {
     background: hsl(var(--terciary-color) / 0.8);
     border-radius: calc(var(--border-radius) / 3);
     padding-block: 2px;
     padding-inline: 6px;
-  }
-
-  .remote-job > span {
     font-size: var(--size--2);
   }
 
   article > h4 {
     font-size: var(--size--2);
-  }
-
-  h3 > span[aria-role="date"] {
-    font-size: var(--size--2);
-    font-weight: 400;
-    opacity: 0.8;
   }
 </style>
