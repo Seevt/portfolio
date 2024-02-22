@@ -1,1 +1,78 @@
-<h2>Education</h2>
+---
+import Section from "@/components/Section.astro";
+import { education } from "@cv";
+---
+
+<Section title="Educación" />
+<ul role="list" class="education-stack">
+  {
+    education.map(({ institution, studyType, area, endDate }) => {
+      return (
+        <li>
+          <article>
+            <div class="title">
+              <h3>{institution}</h3>
+              <span aria-role="date">{endDate}</span>
+            </div>
+            <h4>{studyType}</h4>
+            <p>{area}</p>
+          </article>
+        </li>
+      );
+    })
+  }
+</ul>
+<style>
+  .education-stack {
+    --gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: var(--inner-stack-spacing);
+  }
+  .education-stack > * {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .education-stack > * + * {
+    margin-top: var(--gap);
+  }
+
+  /* article stack */
+  article {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: var(--inner-stack-spacing);
+  }
+
+  article > * {
+    margin-block: 0;
+  }
+
+  article > * + * {
+    margin-top: calc(var(--inner-stack-spacing) * 2);
+  }
+
+  article > .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .title > h3 {
+    font-size: var(--size-0);
+    font-weight: 600;
+    letter-spacing: 0.009px;
+  }
+
+  .title > span[aria-role="date"] {
+    font-size: var(--size--2);
+    font-weight: 400;
+    opacity: 0.8;
+  }
+
+  article > h4 {
+    font-size: var(--size--2);
+  }
+</style>
