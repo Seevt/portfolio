@@ -77,17 +77,66 @@
       ]
     }],
     "education": [{
-      "institution": "Universitat Oberta de Catalunya",
+      "institution": "IES Pedro Soto de Rojas",
       "url": "https://www.uoc.edu/portal/es/index.html",
-      "area": "Ingeniero de Software",
-      "studyType": "Bachelor",
+      "area": "Bachiller en Ciencias Puras",
+      "studyType": null,
       "startDate": "2003-01-01",
       "endDate": "2009-01-01",
       "score": "4.0",
       "courses": [
         "DB1101 - Basic SQL"
       ]
-    }],
+    },
+    {
+      "institution": "IES Pedro Soto de Rojas",
+      "url": "https://www.uoc.edu/portal/es/index.html",
+      "area": "Educación Secundaria Obligatoria",
+      "studyType": null,
+      "startDate": "2003-01-01",
+      "endDate": "2009-01-01",
+      "score": "4.0",
+      "courses": [
+        "DB1101 - Basic SQL"
+      ]
+    },
+    {
+      "institution": "FreeCodeCamp",
+      "url": "https://www.uoc.edu/portal/es/index.html",
+      "area": "Estructuras y Algoritmos de JavaScript",
+      "studyType": "Certificado",
+      "startDate": "2003-01-01",
+      "endDate": "2009-01-01",
+      "score": "4.0",
+      "courses": [
+        "DB1101 - Basic SQL"
+      ]
+    },
+    {
+      "institution": "FreeCodeCamp",
+      "url": "https://www.uoc.edu/portal/es/index.html",
+      "area": "Desarrollo Web Responsivo",
+      "studyType": "Certificado",
+      "startDate": "2003-01-01",
+      "endDate": "2009-01-01",
+      "score": "4.0",
+      "courses": [
+        "DB1101 - Basic SQL"
+      ]
+    },
+    {
+      "institution": "udemy / ZeroToMastery",
+      "url": "https://www.uoc.edu/portal/es/index.html",
+      "area": "Certificado en Desarrollo de aplicaciones web con Vue 3 JS",
+      "studyType": "Certificado",
+      "startDate": "2003-01-01",
+      "endDate": "2009-01-01",
+      "score": "4.0",
+      "courses": [
+        "DB1101 - Basic SQL"
+      ]
+    }
+  ],
     "awards": [{
       "title": "Award",
       "date": "2014-11-01",
@@ -300,7 +349,7 @@
         "github": "https://github.com/midudev/pruebas-tecnicas"
       },
       {
-        "name": "DeduceDataSolutions",
+        "name": "Deduce Data Solutions",
         "isActive": true,
         "description": "Pagina de Empresa y Blog de noticias",
         "highlights": [
