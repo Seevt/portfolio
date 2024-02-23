@@ -273,14 +273,14 @@
         "JavaScript",
         "WeatherAPI"
       ],
-      "url": "https://mars.codes"
+      "url": "https://weather.seevt.dev"
     },
     {
       "name": "React Tetris",
       "isActive": true,
       "description": "Recreación del Tetris Clásico utilizando React.js",
       "highlights": ["Proyecto Personal", "React", "Game", "JavaScript"],
-      "url": "https://adventjs.dev"
+      "url": "https://tetris.seevt.dev/"
     },
     {
       "name": "Chefy",
@@ -293,7 +293,7 @@
         "SvelteKit",
         "TypeScript"
       ],
-      "url": "https://codember.dev"
+      "url": null
     },
     {
       "name": "VueModal",
@@ -301,7 +301,7 @@
       "description": "Componente modal de Vue.js reutilizable con flexibilidad de personalización y accesibilidad",
       "highlights": ["Proyecto Personal", "Vue", "Componente", "TypeScript"],
       "url": "https://github.com/Seevt/reusable-modal-vue3",
-      "github": "https://github.com/midudev/codi.link"
+      "github": "https://github.com/Seevt/reusable-modal-vue3"
     },
     {
       "name": "QuizMeGPT",
@@ -316,7 +316,7 @@
         "Firebase"
       ],
       "url": "https://pruebastecnicas.com",
-      "github": "https://github.com/midudev/pruebas-tecnicas"
+      "github": "https://quizmegpt.seevt.dev"
     },
     {
       "name": "Deduce Data Solutions",
