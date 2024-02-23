@@ -3,25 +3,35 @@ import Section from "@/components/Section.astro";
 import { education } from "@cv";
 ---
 
-<Section title="Educación" />
-<ul role="list" class="education-stack">
-  {
-    education.map(({ institution, studyType, area, endDate }) => {
-      return (
-        <li>
-          <article>
-            <div class="title">
-              <h3>{institution}</h3>
-              <span aria-role="date">{endDate}</span>
-            </div>
-            <h4>{studyType}</h4>
-            <p>{area}</p>
-          </article>
-        </li>
-      );
-    })
-  }
-</ul>
+<Section title="Educación">
+  <ul role="list" class="education-stack">
+    {
+      education.map(({ institution, studyType, area, endDate, url }) => {
+        return (
+          <li>
+            <article>
+              <div class="title">
+                <h3>
+                  <a
+                    class="url"
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {institution}
+                  </a>
+                </h3>
+                <span aria-role="date">{endDate}</span>
+              </div>
+              <h4>{studyType}</h4>
+              <p>{area}</p>
+            </article>
+          </li>
+        );
+      })
+    }
+  </ul>
+</Section>
 <style>
   .education-stack {
     --gap: 1rem;
@@ -74,5 +84,10 @@ import { education } from "@cv";
 
   article > h4 {
     font-size: var(--size--2);
+  }
+
+  a.url:hover {
+    text-decoration: underline;
+    cursor: pointer;
   }
 </style>
