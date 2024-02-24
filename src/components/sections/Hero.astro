@@ -20,7 +20,7 @@ const SOCIAL_ICONS: SocialIcon = {
 
 <Section>
   <div class="container">
-    <div class="info-stack">
+    <article class="info-stack">
       <h1>{name}</h1>
       <h2>{label}</h2>
       <a
@@ -64,9 +64,14 @@ const SOCIAL_ICONS: SocialIcon = {
           })
         }
       </footer>
-    </div>
+
+      <ul class="print">
+        <li>{email}</li>
+        <li>{phone}</li>
+      </ul>
+    </article>
     <figure>
-      <img src={image} alt="ID image" />
+      <img src={image} alt="personal id" />
     </figure>
   </div>
 </Section>
@@ -159,6 +164,28 @@ const SOCIAL_ICONS: SocialIcon = {
   @media (max-width: 350px) {
     figure {
       display: none;
+    }
+  }
+
+  ul.print {
+    display: none;
+  }
+
+  ul.print > li {
+    text-decoration: underline;
+    font-size: var(--size--1);
+    color: hsl(var(--description-color));
+  }
+
+  @media print {
+    footer.no-print {
+      display: none;
+    }
+
+    ul.print {
+      display: flex;
+      flex-direction: column;
+      gap: var(--inner-stack-spacing);
     }
   }
 </style>
